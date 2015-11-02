@@ -1,0 +1,71 @@
+import java.util.HashMap;
+import java.util.Scanner;
+public class Main {
+ 
+public static void main(String[] args)
+	{
+	HashMap<Long,Long> h= new HashMap<Long,Long>();
+		Main p= new Main();
+		Scanner s= new Scanner(System.in);
+		while(s.hasNext())
+		{
+		long q;
+		q=s.nextLong();
+		System.out.println(p.max(q/2, q/3, q/4, q,h));
+		}
+	}
+	public long max(long a,long b,long c,long q,HashMap<Long,Long> p)
+	{ 
+		if((q==1)||(q==2)||(q==3)||(q==4)||(q==5)||(q==6)||(q==7)||(q==8)||(q==9)||(q==10)||(q==11))
+			return q;
+		long d=a+b+c;
+		if(d>q)
+		{
+		   	
+			d=0;
+			if((p.containsKey(a)))
+			{
+				  d=d+p.get(a);
+			}
+			
+					if(!(p.containsKey(a)))
+					{
+						if((a==1)||(a==2)||(a==3)||(a==4)||(a==5)||(a==6)||(a==7)||(a==8)||(a==9)||(a==10)||(a==11))
+							d=d+a;
+						else
+				d=d+max(a/2,a/3,a/4,a,p);
+					}
+			if((p.containsKey(b)))
+			{
+					  d=d+p.get(b);
+			}
+				if(!(p.containsKey(b)))
+				{
+					if((b==1)||(b==2)||(b==3)||(b==4)||(b==5)||(b==6)||(b==7)||(b==8)||(b==9)||(b==10)||(b==11))
+						d=d+b;
+					else
+				d=d+max(b/2,b/3,b/4,b,p);
+				}
+				if((p.containsKey(c)))
+			{
+					  d=d+p.get(c);
+			}
+				if(!(p.containsKey(c)))
+				{
+					if((c==1)||(c==2)||(c==3)||(c==4)||(c==5)||(c==6)||(c==7)||(c==8)||(c==9)||(c==10)||(c==11))
+						d=d+c;
+					else
+				d=d+max(c/2,c/3,c/4,c,p);
+		}
+				p.put(q,d);
+		return d;
+		}
+		else
+		{
+	    p.put(q,d);
+			return q;
+		}
+		
+	}
+	
+}
