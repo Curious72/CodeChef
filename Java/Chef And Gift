@@ -1,0 +1,61 @@
+import java.io.*;
+public class Main {
+ 
+	public static void main(String[] args) throws NumberFormatException, IOException
+	{
+		BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+		int h=Integer.parseInt(br.readLine());
+		while(h>0)
+		{
+			
+		   String s[]= new String[2];
+		   s=br.readLine().split(" ");
+		   int n=Integer.parseInt(s[0]);
+		   int k=Integer.parseInt(s[1]);
+		    String A[]= new String[n];
+		    A=br.readLine().split(" ");
+		    int i,p=0;
+		    if(k==0)
+		    {
+		    	for(i=0;i<=n-1;i++)
+			    {
+			    	if(Integer.parseInt(A[i])%2!=0)
+			    		p++;
+			    	if(p>0)
+			    		{
+			    		System.out.println("YES");
+			    		break;
+			    		}
+			
+			    }
+		    	
+		    	if(p==0)
+		    		System.out.println("NO");
+		    	
+		    	
+		    }
+		    else
+		    {
+		    for(i=0;i<=n-1;i++)
+		    {
+		    	if(Integer.parseInt(A[i])%2==0)
+		    		p++;
+		    	if(p==k)
+		    		{
+		    		System.out.println("YES");
+		    		break;
+		    		}
+		    		
+		    		
+		    }
+		    if(p<k)
+		    	System.out.println("NO");
+			
+			
+		    }
+			h--;
+		}
+		
+	}
+}
+ 
