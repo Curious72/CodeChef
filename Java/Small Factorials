@@ -1,0 +1,29 @@
+import java.math.BigInteger;
+import java.util.*;
+public class Main {
+ 
+	public BigInteger fact(BigInteger n)
+	{
+		BigInteger x= new BigInteger("0");
+		BigInteger s= new BigInteger("1");
+		if(n.equals(s))
+			return s;
+			return (n.subtract(s)).multiply(fact(n.subtract(s)));
+		}
+	
+	public static void main(String[] args)
+	{
+		BigInteger j= new BigInteger("0");
+		BigInteger z= new BigInteger("1");
+		Main s= new Main();
+		Scanner q = new Scanner(System.in);
+		int h=q.nextInt();
+		while(h>0)
+		{
+			 j=BigInteger.valueOf(q.nextLong());
+			System.out.println(s.fact(j.add(z)));
+	h--;
+		}
+	}
+}
+ 
