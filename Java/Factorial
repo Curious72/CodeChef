@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main {
+	
+ 
+	public static void main(String[] args)
+	{
+Scanner s= new Scanner(System.in);
+long h=s.nextLong();
+while(h>0)
+{
+long c=s.nextLong();
+System.out.println(zeroes(c));
+h--;
+}
+	}
+	public static int zeroes(long f)
+	{
+		int g=1,s=0,i=1;
+		while(g>0)
+		{
+			g=(int) (f/(Math.pow(5, i)));
+					s=s+g;
+					i++;
+		}
+		return s;
+	}
+}
+ 
