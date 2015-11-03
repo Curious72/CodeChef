@@ -1,0 +1,36 @@
+import java.io.*;
+public class Main {
+ 
+	public static void main(String[] args) throws IOException
+	{
+		Main f= new Main();
+		BufferedReader b= new BufferedReader(new InputStreamReader(System.in));
+		int h=Integer.parseInt(b.readLine());
+		String s;
+		while(h>0)
+		{
+			s=b.readLine();
+			System.out.println(f.hole(s));
+			h--;
+		}
+		
+	}
+public int hole(String s)
+{
+	int i,a=0;
+char A[]= new char[s.length()];
+s.getChars(0,s.length(),A,0);
+for(i=0;i<=s.length()-1;i++)
+{
+	if((A[i]=='A')||(A[i]=='D')||(A[i]=='O')||(A[i]=='P')||(A[i]=='Q')||(A[i]=='R'))
+	a=a+1;	
+    if(A[i]=='B')
+    	a=a+2;	
+}
+return a;
+	
+}
+ 
+ 
+}
+ 
