@@ -1,0 +1,24 @@
+import java.io.*;
+public class Main
+{
+ 
+	public static void main(String[] args)throws Exception
+	{
+BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+int h=Integer.parseInt(br.readLine());
+double p;
+String A[]= new String[2];
+while(h>0)
+{
+	A=br.readLine().split(" ");
+	int base=Integer.parseInt(A[0]);
+	int ls=Integer.parseInt(A[1]);
+	p=Math.sqrt((ls*ls)-(base*base));
+	System.out.print(p+" ");
+	p=Math.sqrt((base*base)+(ls*ls));
+	System.out.println(p);
+h--;			
+}
+		
+	}
+}	
