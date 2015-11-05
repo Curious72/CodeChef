@@ -1,0 +1,24 @@
+#include <iostream>
+#include<cstdio>
+using namespace std;
+ 
+int main()
+{
+    int h;
+    scanf("%d",&h);
+    while(h>0)
+    {
+        int j;
+        scanf("%d",&j);
+        if(!(j&1))
+            printf("ALICE \n");
+        else
+            printf("BOB \n");
+ 
+ 
+ 
+ 
+        h--;
+    }
+}
+ 
