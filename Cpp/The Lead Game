@@ -1,0 +1,49 @@
+#include <iostream>
+#include<algorithm>
+#include<cstdio>
+#include<math.h>
+using namespace std;
+ 
+int main()
+{
+ 
+int h;
+scanf("%d",&h);
+int i=0;
+int big=0;
+int a=0,b=0,c,d,n=0,m=0;
+while(i<h)
+{
+scanf("%d %d",&a,&b);
+a=n+a;
+b=m+b;
+if(a>b)
+{
+    c=a-b;
+    if(c>big)
+    {
+        big=c;
+    d=1;
+    }
+}
+else if(a<b)
+{
+    c=b-a;
+    if(c>big)
+    {
+        big=c;
+        d=2;
+ 
+ 
+    }
+ 
+ 
+ 
+}
+ 
+i++;
+n=a;
+m=b;
+}
+printf("%d %d",d,big);
+}
