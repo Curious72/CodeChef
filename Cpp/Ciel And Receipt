@@ -1,0 +1,61 @@
+#include<iostream>
+#include<cstdio>
+using namespace std;
+int main()
+{
+ 
+    int h;
+    scanf("%d",&h);
+    int A[12];
+    A[0]=1;
+    A[1]=2;
+    A[2]=4;
+    A[3]=8;
+    A[4]=16;
+    A[5]=32;
+    A[6]=64;
+    A[7]=128;
+    A[8]=256;
+    A[9]=512;
+    A[10]=1024;
+    A[11]=2048;
+    int u;
+    while(h>0)
+    {
+        int y,i;
+        int count=0;
+        scanf("%d",&y);
+        if(y>2048)
+          {
+              u=y/2048;
+              count=u;
+              for(i=0;i<=11;i++)
+              {
+                  if(A[i]&(y%2048))
+                    count++;
+ 
+              }
+ 
+ 
+          }
+          else
+          {
+ 
+              for(i=0;i<=11;i++)
+              {
+ 
+ 
+                  if(A[i]&y)
+                    count++;
+              }
+ 
+ 
+          }
+ 
+ 
+        printf("%d \n",count);
+        h--;
+    }
+ 
+ 
+}
