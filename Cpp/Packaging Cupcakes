@@ -1,0 +1,20 @@
+#include <iostream>
+#include<cstdio>
+using namespace std;
+ 
+int main()
+{
+    int h;
+    scanf("%d",&h);
+    while(h>0)
+    {
+int y;
+scanf("%d",&y);
+ y=(y>>1) +1;
+ printf("%d \n",y);
+ 
+ 
+ 
+        h--;
+    }
+}
