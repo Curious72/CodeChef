@@ -1,0 +1,29 @@
+#include <iostream>
+#include<cstdio>
+using namespace std;
+ 
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t>0)
+    {
+        int n,k,sum=0,i;
+        scanf("%d %d",&n,&k);
+        for(i=0;i<n;i++)
+        {
+            int p;
+            scanf("%d",&p);
+            sum=sum+p;
+        }
+        if(k>=sum)
+            printf("Yes \n");
+        else
+            printf("No \n");
+ 
+ 
+ 
+ 
+        t--;
+    }
+}
