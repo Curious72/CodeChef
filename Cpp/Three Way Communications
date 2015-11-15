@@ -1,0 +1,40 @@
+#include<iostream>
+#include<cstdio>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t>0)
+    {
+       int y,count=0;
+       double dis;
+       scanf("%d",&y);
+        int A[3],B[3],i,j;
+        for(i=0;i<3;i++)
+            {
+ 
+                scanf("%d %d",&A[i],&B[i]);
+            }
+        for(i=0;i<3;i++)
+            for(j=i+1;j<3;j++)
+        {
+            int v,g;
+            v=A[j]-A[i];
+            g=B[j]-B[i];
+            dis= sqrt(v*v +g*g);
+            if(dis<=y)
+                count++;
+        }
+        if(count>=2)
+            printf("yes \n");
+        else
+            printf("no \n");
+ 
+ 
+ 
+        t--;
+    }
+ 
+}
