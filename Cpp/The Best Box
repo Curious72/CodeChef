@@ -1,0 +1,22 @@
+#include <iostream>
+#include<cstdio>
+#include<math.h>
+#include<iomanip>
+using namespace std;
+ 
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t>0)
+    {
+        double sol,vol;
+        double a,b;
+        scanf("%lf %lf",&a,&b);
+        sol= (a-sqrt((a*a)-(24*b)))/12;
+        vol=(4*(sol*sol*sol)-(a*sol*sol)+(2*sol*b))/4;
+        cout<<fixed<<showpoint<<setprecision(2);
+        cout<<vol<<endl;
+        t--;
+    }
+}
