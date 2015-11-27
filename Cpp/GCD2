@@ -1,0 +1,54 @@
+#include<iostream>
+#include<cstdio>
+using namespace std;
+int gcd(int,int);
+int main()
+{
+ 
+    int h;
+    scanf("%d",&h);
+    while(h>0)
+    {
+        int a;
+        cin>>a;
+        string b;
+        cin>>b;
+        int length=b.length();
+        int mod=1;
+    int mod1;
+    int mod2;
+    int sum=0;
+    int i;
+    if(a==0)
+    {
+        cout<<b<<endl;
+    }
+    else
+    {
+    for(i=length-1;i>=0;i--)
+    {
+        int y=b[i]-48;
+        mod1=y%a;
+        mod2=(mod1*mod)%a;
+        sum=sum+mod2;
+        mod=((10%a)*mod)%a;
+ 
+    }
+    sum=sum%a;
+     printf("%d \n",gcd(sum,a));
+    }
+ 
+h--;
+    }
+}
+int gcd(int a,int b)
+{
+ if(a==0)
+    return b;
+ if(a==1)
+    return 1;
+ else
+    return gcd(b%a,a);
+ 
+ 
+}
