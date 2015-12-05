@@ -1,0 +1,71 @@
+#include <iostream>
+#include<algorithm>
+#include<cstdio>
+using namespace std;
+ 
+int main()
+{
+int t;
+scanf("%d",&t);
+while(t>0)
+{
+    int h,i,j;
+    scanf("%d",&h);
+    int A[h],B[h],C[100000];
+    for(i=0;i<h;i++)
+    {
+    scanf("%d",&A[i]);
+ 
+ 
+ 
+ 
+    }
+    for(i=0;i<h;i++)
+    {
+    scanf("%d",&B[i]);
+ 
+ 
+ 
+ 
+    }
+    int g=0;
+    for(i=0;i<h;i++)
+    {
+ 
+        for(j=A[i];j<B[i];j++)
+        {
+            C[g]=j;
+            g++;
+            }
+ 
+ 
+ 
+    }
+    sort(C,C+g);
+    int big=0;
+    int count=0;
+    for(i=0;i<g-1;i++)
+    {
+    count=1;
+        while(C[i]==C[i+1])
+        {
+            count++;
+            i++;
+}
+        if(count>big)
+            big=count;
+ 
+    }
+    if(big==0)
+        big=1;
+ 
+    printf("%d \n",big);
+ 
+ 
+    t--;
+}
+ 
+ 
+ 
+}
+ 
