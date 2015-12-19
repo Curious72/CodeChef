@@ -1,0 +1,47 @@
+    #include<iostream>
+    #include<cstdio>
+    using namespace std;
+    int main()
+    {
+       int h;
+       scanf("%d",&h);
+       while(h>0)
+        {
+            int y,i,r;
+            scanf("%d",&y);
+            int g=y/7;
+            int e=0;
+        if(y==4)
+        printf("0 \n");
+            else
+            {
+     
+     
+            while(g>=0)
+            {
+     
+                 r=y-7*g;
+                if(r%4==0)
+                {
+                    e=1;
+                    break;
+                }
+     
+     
+                g--;
+            }
+            if(e==1)
+    printf("%d \n",g*7);
+    else
+        printf("-1 \n");
+     
+            }
+     
+            h--;
+        }
+     
+     
+     
+     
+    }
+     
