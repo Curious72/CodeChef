@@ -1,0 +1,86 @@
+    #include <iostream>
+    #include<set>
+    #include<algorithm>
+    #include<cstdio>
+    using namespace std;
+     
+    int main()
+    {
+     
+     
+     
+    int h,i;
+    scanf("%d",&h);
+    while(h>0)
+    {
+        string s,t;
+        cin>>s;
+        cin>>t;
+        set<char> g;
+    int l=s.length();
+    int le=t.length();
+     char A[le+1];
+    for(i=0;i<l;i++)
+    {
+         g.insert(s[i]);
+    }
+        for(i=0;i<le;i++)
+           A[i]=t[i];
+     
+           int lg=g.size();
+           char B[lg];
+           set<char>::iterator it;
+           int i=0;
+           for(it=g.begin();it!=g.end();it++)
+           {
+     
+               B[i]=*it;
+               i++;
+     
+     
+     
+           }
+     
+     
+    int sum=0;
+    int j;
+    int count=0;
+    A[le]=-1;
+    for(i=0;i<le;i++)
+    {
+     
+     
+        for(j=0;j<lg;j++)
+        {
+     
+            if(A[i]==B[j])
+            {
+                count=1;
+                break;
+     
+     
+            }
+     
+        }
+        if(count)
+              {
+              while(A[i]==A[i+1])
+                {
+                    count++;
+                    i++;
+                }
+     
+     
+                  sum=sum+count;
+                  count=0;
+              }
+     
+    }
+    cout<<sum<<endl;
+     
+     
+     
+    h--;
+    }
+    }
+     
