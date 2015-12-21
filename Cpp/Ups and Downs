@@ -1,0 +1,33 @@
+#include <iostream>
+#include<cstdio>
+#include<algorithm>
+using namespace std;
+ 
+int main()
+{
+ 
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int n,i,g;
+        scanf("%d",&n);
+        int A[n],B[n];
+        for(i=0;i<n;i++)
+            scanf("%d",&A[i]);
+        sort(A,A+n);
+          for(i=0,g=0;i<n;i=i+2,g++)
+            B[i]=A[g];
+        for(i=1;i<n;i=i+2,g++)
+        B[i]=A[g];
+ 
+        for(i=0;i<n;i++)
+        printf("%d ",B[i]);
+        cout<<endl;
+ 
+ 
+    }
+ 
+ 
+}
+ 
