@@ -1,0 +1,56 @@
+#include<iostream>
+#include<cstdio>
+using namespace std;
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    int count=0;
+    double m1,m2,m3;
+    while(t--)
+    {
+ 
+m1=0;
+m2=0;
+m3=0;
+        int x1,x2,x3,y1,y2,y3;
+        scanf("%d %d %d %d %d %d",&x1,&y1,&x2,&y2,&x3,&y3);
+        if(((x1-x2)!=0)&&((x1-x3)!=0))
+        {
+        m1= (((y1-y2)*(y1-y3))/(((x1-x2)*(x1-x3))*1.0));
+        }
+        else if(((x1-x2)==0)&&((y1-y3)==0))
+        m1=-1;
+        else if(((x1-x3)==0)&&((y1-y2==0)))
+        m1=-1;
+        if(m1==(-1))
+                count++;
+        else
+        {
+            if(((x2-x1)!=0)&&((x2-x3)!=0))
+            {
+        m2= (((y2-y1)*(y2-y3))/((x2-x1)*(x2-x3)*1.0));
+            }
+ 
+                else if(((x2-x1)==0)&&((y2-y3)==0))
+                    m2=-1;
+                else if(((x2-x3)==0)&&((y2-y1==0)))
+                    m2=-1;
+        if(m2==(-1))
+            count++;
+        else
+        {
+            if(((x3-x1)!=0)&&((x3-x2)!=0))
+            m3=(((y3-y1)*(y3-y2))/((x3-x1)*(x3-x2)*1.0));
+            else if(((x3-x1)==0)&&((y3-y2)==0))
+                m3=-1;
+            else if(((x3-x2)==0)&&((y3-y1==0)))
+                m3=-1;
+            if(m3==(-1))
+                count++;
+        }
+ 
+    }
+    }
+    cout<<count<<endl;
+}
