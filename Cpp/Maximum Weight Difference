@@ -1,0 +1,47 @@
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int n,m;
+        scanf("%d %d",&n,&m);
+        int i;
+        int sum=0,diff=0,sub=0;
+        int A[n];
+        for(i=0;i<n;i++)
+        {
+            scanf("%d",&A[i]);
+            sum=sum+A[i];
+ 
+        }
+        sort(A,A+n);
+        int sum1=0,sum2=0;
+        if((n-m)<m)
+        {
+        for(i=0;i<n-m;i++)
+            sum1=sum1+A[i];
+            sum2=sum-sum1;
+        diff=sum2-sum1;
+ 
+        }
+        else
+        {
+ 
+               for(i=0;i<m;i++)
+            sum1=sum1+A[i];
+            sum2=sum-sum1;
+        diff=sum2-sum1;
+ 
+ 
+        }
+cout<<diff<<endl;
+ 
+ 
+}
+}
+ 
