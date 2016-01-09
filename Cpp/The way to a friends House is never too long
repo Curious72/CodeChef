@@ -1,0 +1,50 @@
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+#include<math.h>
+#include<iomanip>
+using namespace std;
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        printf("\n");
+        int n;
+        scanf("%d",&n);
+        unsigned long long int d[n];
+        int i;
+        for(i=0;i<n;i++)
+        {
+             long long int a,b;
+            scanf("%lld %lld",&a,&b);
+            d[i]=a*100000+(10000-b);
+ 
+ 
+        }
+ 
+        sort(d,d+n);
+         long long int c,e,r,t;
+         double sum=0,q;
+         r=d[0]/100000;
+         t=10000-d[0]%100000;
+        for(i=1;i<n;i++)
+        {
+            c=d[i]/100000;
+            e=10000- (d[i])%100000;
+            q=sqrt( (c-r)*(c-r)+(t-e)*(t-e));
+            sum=sum+q;
+            r=c;
+            t=e;
+        }
+        cout<<fixed<<showpoint<<setprecision(2);
+        cout<<sum<<endl;
+ 
+    }
+ 
+ 
+ 
+ 
+}
+ 
