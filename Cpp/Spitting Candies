@@ -1,0 +1,34 @@
+#include <iostream>
+#include<cstdio>
+using namespace std;
+ 
+int main()
+{
+int t;
+scanf("%d",&t);
+while(t--)
+{
+    long long int n,k,r,y=0;
+    scanf("%lld %lld",&n,&k);
+    if(k==0)
+    {
+             r=0;
+             y=n;
+ 
+    }
+    else
+    {
+    r=n/k;
+    y=n-r*k;
+    }
+  printf("%lld %lld\n",r,y);
+ 
+ 
+ 
+}
+ 
+ 
+ 
+ 
+}
+ 
