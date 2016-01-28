@@ -1,0 +1,35 @@
+#include<cstdio>
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int n;
+        scanf("%d",&n);
+        int r,p;
+ 
+        r=360/n;
+        p=360-n*r;
+        if(p==0)
+            printf("y ");
+        else
+            printf("n ");
+        if(n<=360)
+            printf("y ");
+        else
+            printf("n ");
+            if(n<=26)
+                printf("y ");
+            else
+                printf("n ");
+    printf("\n");
+    }
+ 
+ 
+ 
+ 
+ 
+}
