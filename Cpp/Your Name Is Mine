@@ -1,0 +1,66 @@
+#include<iostream>
+#include<cstdio>
+using namespace std;
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        string p,h;
+        cin>>p>>h;
+        int l1,l2;
+        l1=p.length();
+        l2=h.length();
+        int i,j;
+        int g=0,k=0;
+        int y=0;
+        string temp;
+        int tempo;
+        int u=0;
+        if(l2>l1)
+        {
+         temp=h;
+         h=p;
+         p=temp;
+         tempo=l2;
+         l2=l1;
+         l1=tempo;
+}
+            for(i=0;(i<l1)&&(u<=l2);i++)
+            {
+                 k=0;
+                for(j=g;j<l2;j++)
+                {
+                    if(p[i]==h[j])
+                    {
+                       u++;
+                       k=1;
+                       g=j+1;
+                       break;
+                    }
+if(k==0)
+{
+    break;
+}
+ 
+ 
+ 
+                }
+ 
+ 
+            }
+            if(u==l2)
+                printf("YES\n");
+            else
+                printf("NO \n");
+ 
+ 
+ 
+    }
+ 
+ 
+ 
+ 
+ 
+}
