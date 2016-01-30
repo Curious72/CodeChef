@@ -1,0 +1,19 @@
+#include<cstdio>
+#include<iostream>
+using namespace std;
+int main()
+{
+    long long unsigned int n;
+    scanf("%llu",&n);
+ 
+if(n%6==0)
+    printf("yes \n");
+else if((n-3)%6==0)
+printf("yes \n");
+else if((n-1)%6==0)
+printf("yes \n");
+else
+printf("no \n");
+ 
+}
+ 
