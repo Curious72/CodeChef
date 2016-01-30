@@ -1,0 +1,32 @@
+#include<cstdio>
+#include<iostream>
+using namespace std;
+int main()
+{
+    long long unsigned int n;
+    scanf("%llu",&n);
+    while(n--)
+    {
+        long long unsigned int t;
+        scanf("%llu",&t);
+ 
+        long long unsigned int i;
+        for(i=0;i<t;i++)
+        {
+            long long unsigned int k;
+            scanf("%llu",&k);
+        }
+ 
+        long long unsigned int p=t*(t-1)/2;
+        printf("%llu \n",p);
+ 
+ 
+ 
+ 
+    }
+ 
+ 
+ 
+ 
+}
+ 
