@@ -1,0 +1,43 @@
+#include<cstdio>
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int n;
+        scanf("%d",&n);
+        int i;
+        unsigned long long int sum=0;
+        unsigned long long int small=1000000000;
+        for(i=0;i<n;i++)
+        {
+            int h;
+             scanf("%d",&h);
+             if(h<=small)
+                small=h;
+                sum=sum+h;
+        }
+ 
+        unsigned long long int answer=0;
+        answer=sum-small*n;
+        cout<<answer<<endl;
+ 
+ 
+    }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+}
