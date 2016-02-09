@@ -1,0 +1,47 @@
+#include<iostream>
+#include<cstdio>
+using namespace std;
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int n,i;
+        scanf("%d",&n);
+        int A[n];
+        for(i=0;i<n;i++)
+        {
+            scanf("%d",&A[i]);
+        }
+        int minelement=A[0];
+        int maxdiff=A[1]-A[0];
+        for(i=0;i<n;i++)
+        {
+ 
+            if(A[i]-minelement>maxdiff)
+            maxdiff=A[i]-minelement;
+           else if(A[i]<minelement)
+                minelement=A[i];
+ 
+        }
+ 
+        if(maxdiff<=0)
+            printf("UNFIT \n");
+        else
+            printf("%d \n",maxdiff);
+ 
+ 
+ 
+ 
+ 
+ 
+    }
+ 
+ 
+ 
+ 
+ 
+ 
+}
+ 
