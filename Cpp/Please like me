@@ -1,0 +1,55 @@
+#include<iostream>
+#include<cstdio>
+using namespace std;
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+ 
+        unsigned long long int l,d,s,c;
+        scanf("%llu %llu %llu %llu",&l,&d,&s,&c);
+        int g=0;
+        unsigned long long int i=0;
+        if(d==1)
+            {
+            if(s>=l)
+            printf("ALIVE AND KICKING \n");
+            else
+            printf("DEAD AND ROTTING \n");
+ 
+            }
+        else
+        {
+        for(i=0;i<d-1;i++)
+        {
+                s=s+s*c;
+             if((s>=l)||(c>=l))
+            {
+                printf("ALIVE AND KICKING \n");
+                g=1;
+                break;
+            }
+        }
+ 
+        if((s<l)&&(g==0))
+        {
+            printf("DEAD AND ROTTING \n");
+        }
+        }
+ 
+ 
+ 
+ 
+ 
+ 
+    }
+ 
+ 
+ 
+ 
+ 
+ 
+}
+ 
