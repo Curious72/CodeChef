@@ -1,0 +1,147 @@
+#include<cstdio>
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int a,b,c;
+        scanf("%d %d %d",&a,&b,&c);
+        int h;
+        signed long long int count=0;
+        signed long long int countnow=0;
+                int g=0;
+                int u;
+                int y;
+                int r=0;
+ 
+if(c==0)
+{
+    count=0;
+    g=1;
+}
+else if((c>a)&&(c>b))
+{
+    count=-1;
+}
+else if(a==b)
+{
+    if(c==a)
+    {
+        g=1;
+        count=1;
+ 
+    }
+    else
+        count=-1;
+ 
+}
+       else if((a==c)||(b==c))
+           {
+               g=1;
+               count=1;
+           }
+            else
+            {
+        if(a<b)
+        {
+            h=a;
+            a=b;
+            b=h;
+        }
+        u=a;
+                count=1;
+                countnow=1;
+        while(a>=0)
+        {
+            if((a-c)%b==0)
+             {
+                 count=count+2*((a-c)/b)-1;
+                 g=1;
+                 break;
+             }
+            else
+            {
+                y=u-b+a%b;
+               if(a%b==0)
+               {
+                   count=-1;
+                   break;
+               }
+               count=count+2*(a/b);
+               if(c==(a%b))
+               {
+                   g=1;
+                 break;
+               }
+               else
+               {
+ 
+                    if(c==y)
+                    {
+                        count=count+3;
+                        g=1;
+                        break;
+                    }
+                    else
+                        count=count+4;
+ 
+ 
+                                    a=y;
+               }
+ 
+ 
+            }
+ 
+        }
+        int d=b;
+        int f=c;
+        a=u;
+        while(b>0)
+        {
+            if(c%d==0)
+            {
+                countnow=2*(c/d)+countnow-1;
+                r=1;
+                break;
+            }
+            countnow= 2*(ceil(u/(d*1.0)))+countnow-1;
+            y=d*(ceil(u/(d*1.0)))-u;
+            if(f==y)
+            {
+                r=1;
+                break;
+            }
+            countnow=countnow+3;
+            b=y;
+ 
+            c=f-b;
+            u=a-b;
+ 
+        }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+}
+ 
+ 
+ 
+ 
+if((r==0)&&(g==0))
+   printf("-1 \n");
+   else if((r==0)&&(g==1))
+    printf("%lld \n",count);
+   else if((r==1)&&(g==0))
+    printf("%lld \n",countnow);
+   else
+    printf("%lld \n",min(count,countnow));
+    }
+}
+ 
