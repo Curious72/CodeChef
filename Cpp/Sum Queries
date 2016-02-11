@@ -1,0 +1,37 @@
+#include<cstdio>
+#include<iostream>
+using namespace std;
+int main()
+{
+    unsigned long long int n,m;
+    scanf("%llu %llu",&n,&m);
+    unsigned long long int i=0,g=0;
+    for(i=0;i<m;i++)
+    {
+ 
+        unsigned long long int a;
+        scanf("%llu",&a);
+        if((a>=(2*n+1))&&(a<=3*n))
+        {
+            g=a-2*n-1;
+            printf("%llu \n",(n-g));
+        }
+        else if((a>=(n+2))&&(a<(2*n+1)))
+        {
+            g=a-n-1;
+            printf("%llu \n",g);
+ 
+        }
+        else
+            printf("0 \n");
+ 
+ 
+    }
+ 
+ 
+ 
+ 
+ 
+ 
+}
+ 
