@@ -1,0 +1,41 @@
+#include<iostream>
+#include<cstdio>
+#include<string>
+using namespace std;
+int main()
+{int t;
+    scanf("%d",&t);
+    string p;
+    getline(cin,p);
+    while(t--)
+    {string s;
+    char a,b,c,d,e;
+    getline(cin,s);
+        int length=s.length();
+        if(length>5)
+            printf("Error \n");
+        else
+        {   a=s[0];
+            b=s[1];
+            c=s[2];
+            d=s[3];
+            e=s[4];
+           if((a<97)||(a>104)||(d<97)||(d>104))
+                printf("Error \n");
+            else if((b<49)||(b>56)||(e<49)||(e>56))
+                printf("Error \n");
+            else if(c!='-')
+                printf("Error \n");
+                else
+                {   int g,h;
+                    g=a-d;
+                    h=b-e;
+                    if(g<0)
+                        g=g*(-1);
+                    if(h<0)
+                        h=h*(-1);
+                    if(((g==1)&&(h==2))||((g==2)&&(h==1)))
+                        printf("Yes \n");
+                    else
+                        printf("No \n");
+                        }}}} 
