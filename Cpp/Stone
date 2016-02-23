@@ -1,0 +1,54 @@
+#include<cstdio>
+#include<iostream>
+#define max 3000000000
+using namespace std;
+int main()
+{
+    int n,k;
+    scanf("%d %d",&n,&k);
+    int i=0;
+    signed long long int A[n],big=0,small=max;
+    for(i=0;i<n;i++)
+    {
+    scanf("%lld",&A[i]);
+    if(big<A[i])
+        big=A[i];
+       if(small>A[i])
+            small=A[i];
+    }
+    if(k==0)
+    {
+        for(i=0;i<n;i++)
+        {
+            cout<<A[i]<<" ";
+        }
+        cout<<endl;
+    }
+    else
+    {
+    for(i=0;i<n;i++)
+    {
+        A[i]=big-A[i];
+    }
+    if(k&1)
+    {
+        for(i=0;i<n;i++)
+        {
+        cout<<A[i]<<" ";
+ 
+        }
+        cout<<endl;
+    }
+    else
+    {
+        big=big-small;
+        for(i=0;i<n;i++)
+        {
+            A[i]=big-A[i];
+            cout<<A[i]<<" ";
+        }
+        cout<<endl;
+ 
+ 
+    }}
+}
