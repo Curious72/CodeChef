@@ -1,0 +1,78 @@
+    #include<cstdio>
+    #include<iostream>
+    #include<string.h>
+    #define max 300000
+    using namespace std;
+    int arr[max];
+     int lazy[max];
+    void update(int a,int b,int i,int j,int n)
+    {
+            if(lazy[n]==1)
+        {
+            arr[n]=(b-a+1)-arr[n];
+            if(a!=b)
+            {
+                lazy[2*n]=lazy[2*n]^1;
+                lazy[(2*n)+1]=lazy[(2*n)+1]^1;
+            }
+            lazy[n]=0;
+        }
+        if((i>b)||(j<a)||(a>b))
+            return;
+     
+        if((a>=i)&&(b<=j))
+        {
+            arr[n]=(b-a+1)-arr[n];
+            if(a!=b)
+            {
+                lazy[2*n]=lazy[2*n]^1;
+                lazy[(2*n)+1]=lazy[(2*n)+1]^1;
+            }
+            return;
+        }
+        int w;
+        w=(a+b)>>1;
+        update(a,w,i,j,2*n);
+        update(w+1,b,i,j,(2*n)+1);
+        arr[n]=arr[2*n]+arr[(2*n)+1];
+        
+        return;
+    }
+    int query(int a,int b,int i,int j,int n)
+    {
+          if(lazy[n]==1)
+        {
+            arr[n]=(b-a+1)-arr[n];
+            if(a!=b)
+            {
+               lazy[2*n]=lazy[2*n]^1;
+               lazy[(2*n)+1]=lazy[(2*n)+1]^1;
+            }
+            lazy[n]=0;
+            }
+        if((i>b)||(j<a)||(a>b))
+            return 0;
+      
+           if((a>=i)&&(b<=j))
+            return arr[n];
+            int x=(a+b)>>1;
+        return(query(a,x,i,j,2*n)+query(x+1,b,i,j,(2*n)+1));
+    }
+    int main()
+    {
+        int l,q;
+        scanf("%d %d",&l,&q);
+        memset(arr,0,sizeof arr);
+        memset(lazy,0,sizeof lazy);
+     
+        while(q--)
+        {
+            int a,b,c;
+            scanf("%d %d %d",&a,&b,&c);
+            if(a==0)
+                update(0,l-1,b,c,1);
+            else
+               printf("%d \n",query(0,l-1,b,c,1));
+        }
+        return 0;
+    } 
