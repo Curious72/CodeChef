@@ -1,0 +1,66 @@
+    #include<cstdio>
+    #include<iostream>
+    #define h 9999999
+    #include<algorithm>
+    signed long long int A[10000002];
+    signed long long int C[10000002];
+    using namespace std;
+    int main()
+    {
+     
+     
+        int n,m;
+        scanf("%d %d",&n,&m);
+     
+        signed long long int i=0;
+        signed long long int big=0;
+        signed long long int yu=1;
+        signed long long int sum=0;
+        for(i=1;i<=n;i++)
+        {
+            scanf("%lld",&C[i]);
+            if((C[i]>=big)&&(C[i]<=(m)))
+                big=C[i];
+     
+        }
+        sort(C+1,C+n+1);
+        A[0]=1;
+        int g=1;
+        for(i=1;(i<=(big+1))&&(g<=n);i++)
+        {
+            A[i]=((A[i-1])*(i%m))%m;
+            if(i==(C[g]+1))
+            {
+            while((i==(C[g]+1))&&(g<=n))
+            {
+                sum=((sum%m)+(A[i]%m))%m;
+                g++;
+            }
+        }
+        }
+        for(i=1;i<=n;i++)
+        {
+       signed long long int ju=C[i];
+        if(!(ju&1))
+            {
+                yu= (((ju/2)%m)*(ju%m))%m;
+                yu=(yu*((ju+1)%m))%m;
+            }
+            else
+            {
+                yu=((((ju+1)/2)%m)*(ju%m))%m;
+                yu=(yu*(ju%m))%m;
+     
+            }
+            sum=((sum%m)+(yu%m))%m;
+        }
+        sum=sum-(n%m);
+        while(sum<0)
+            sum=sum+m;
+        sum=sum%m;
+        printf("%lld \n",sum);
+     
+     
+     
+    }
+     
