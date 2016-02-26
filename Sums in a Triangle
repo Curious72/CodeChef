@@ -1,0 +1,42 @@
+    #include<cstdio>
+    #include<iostream>
+    #include<string.h>
+    int A[101][101];
+    using namespace std;
+    int main()
+    {
+        int n;
+        scanf("%d",&n);
+        while(n--)
+        {
+            memset(A,0,sizeof A);
+            int r;
+            int i,j;
+            scanf("%d",&r);
+            for(i=1;i<=r;i++)
+                for(j=1;j<=i;j++)
+                scanf("%d",&A[i][j]);
+     
+    for(i=2;i<=r;i++)
+    {
+        A[i][1]=A[i-1][1]+A[i][1];
+    }
+    for(i=2;i<=r;i++)
+        for(j=i;j<=r;j++)
+    {
+        A[j][i]=max(A[j-1][i],A[j-1][i-1])+A[j][i];
+    }
+    int  big=-1;
+    for(i=1;i<=r;i++)
+    {
+    if(A[r][i]>big)
+        big=A[r][i];
+     
+    }
+    printf("%d \n",big);
+        }
+     
+     
+     
+    }
+     
