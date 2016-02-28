@@ -1,0 +1,91 @@
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+#define maxi 1000000
+using namespace std;
+int M[18][maxi];
+int A[maxi];
+int aray[maxi];
+  void process2(int N)
+  {
+      int i, j;
+ 
+  //initialize M for the intervals with length 1
+      for (i = 0; i < N; i++)
+          M[0][i] = i;
+  //compute values from smaller to bigger intervals
+      for (j = 1; (1 << j) <= N; j++)
+          for (i = 0; (i + (1 << j) - 1) < N; i++)
+              if (A[M[j - 1][i]] > A[M[j - 1][(i + (1 << (j - 1)))]])
+                  M[j][i] = M[j - 1][i];
+              else
+                  M[j][i] = M[j - 1][i + (1 << (j - 1))];
+  }
+  int query(int a,int b)
+  {
+      int k=log2(b-a+1);
+      if(A[M[k][a]]>=A[M[k][b-(1<<k)+1]])
+        return A[M[k][a]];
+      else
+        return A[M[k][b-(1<<k)+1]];
+  }
+int main()
+{
+    int t;
+    scanf("%d",&t);
+ 
+    int i=0,j;
+    for(i=0;i<t;i++)
+        scanf("%d",&A[i]);
+    process2(t);
+       int q;
+      unsigned long long int sum=0;
+      int a,b;
+      int quer=0;
+    scanf("%d %d %d",&q,&a,&b);
+    int y=0;
+    y=t%7;
+    j=t%11;
+    int a1=t-1,d1=t;
+    if(y==1)
+    {
+        a1=t/7;
+    }
+    if(j==0)
+    {
+        d1=t/11;
+    }
+    int s=(a1*d1);
+    int d=min(s,q);
+    aray[0]=0;
+    if(d==s)
+    {
+    for(i=1;i<=s;i++)
+    {
+      aray[i]= query(min(a,b),max(a,b));
+      sum=sum+aray[i];
+      aray[i]=sum;
+        a=(a+7)%(t-1);
+        b=(b+11)%(t);
+    }
+    int sd=q/s;
+    sum=sum*sd;
+    int moduo=q%s;
+    sum=sum+aray[moduo];
+    printf("%llu \n",sum);
+    }
+    else
+    {
+        for(i=1;i<=q;i++)
+        {
+            sum=sum+query(min(a,b),max(a,b));
+            a=(a+7)%(t-1);
+            b=(b+11)%t;
+        }
+ 
+        printf("%llu \n",sum);
+ 
+ 
+ 
+    }
+}
