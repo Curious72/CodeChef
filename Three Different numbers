@@ -1,0 +1,27 @@
+#include<cstdio>
+#include<iostream>
+#include<algorithm>
+#define p 1000000007
+using namespace std;
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        unsigned long long int pro=1;
+        unsigned long long int A[3];
+        scanf("%llu %llu %llu",&A[0],&A[1],&A[2]);
+        sort(A,A+3);
+        pro=((A[0]%p)*((A[1]-1)%p))%p;
+        pro=(pro*((A[2]-2)%p))%p;
+        cout<<pro<<endl;
+ 
+    }
+ 
+ 
+ 
+ 
+ 
+}
+ 
