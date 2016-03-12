@@ -1,0 +1,45 @@
+    #include<bits/stdc++.h>
+    using namespace std;
+    long long int R[314160];
+    long long int C[314160];
+    int main()
+    {
+        memset(R,0,sizeof R);
+        memset(C,0,sizeof C);
+        int n,q;
+        cin>>n>>q;
+        int maxR=0;
+        int maxC=0;
+        while(q--)
+        {
+     
+            string a;
+            int x,y;
+            cin>>a>>x>>y;
+            if(a[0]=='R')
+            {
+                R[x]+=y;
+                if(x>maxR)
+                    maxR=x;
+            }
+            else
+            {
+                C[x]+=y;
+             if(x>maxC)
+                    maxC=x;
+            }
+        }
+        int i;
+        long long int maxi=-1;
+        long long int maxc=-1;
+        int h=max(maxR,maxC);
+        for(i=1;i<=h;i++)
+        {
+            if(R[i]>maxi)
+                maxi=R[i];
+                if(C[i]>maxc)
+                    maxc=C[i];
+        }
+        cout<<(maxc+maxi)<<endl;
+    }
+     
