@@ -1,0 +1,65 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+
+    int n;
+
+    scanf("%d",&n);
+
+    int i;
+
+    int length=0;
+
+    int max=-1;
+
+    for(i=1;i<=n;i++)
+
+    {
+
+        int a;
+
+        scanf("%d",&a);
+
+        if(a==0)
+
+        {
+
+            if(length>max)
+
+                max=length;
+
+            length=0;
+
+ 
+
+        }
+
+        else
+
+            length++;
+
+    }
+
+    if(length>max)
+
+        max=length;
+
+    cout<<max<<endl;
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+}
+
+ 
